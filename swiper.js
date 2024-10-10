@@ -1,5 +1,4 @@
-let cards = document.querySelectorAll(".card");
-let mobile = document.querySelectorAll(".mobile");
+let swiper = document.querySelector(".swiper-wrapper");
 const slider = document.querySelector(".slider-container");
 
 let mySwiper;
@@ -45,31 +44,15 @@ window.addEventListener("resize", () => {
 let toogle = document.querySelector(".viewmore");
 let but = document.querySelector(".icon-text");
 let strelochka = document.querySelector(".icon-button");
-let mass = [];
-console.log(mass);
-toogle.addEventListener("click", () => {
-  if (window.innerWidth >= 768) {
-    if (but.textContent == "Показать всё") {
-      but.textContent = "Скрыть";
-      strelochka.style.webkitTransform = "rotate(180deg)";
-      console.log(getComputedStyle(mobile[8]).display);
 
-      for (let i = 0; i < mobile.length; i++) {
-        if (getComputedStyle(mobile[i]).display == "none") {
-          mobile[i].style.display = "flex";
-          mass.push(i);
-        }
-      }
-    }
+toogle.onclick = function () {
+  swiper.classList.toggle("swiper-wrapper--vesb-blok");
+  swiper.classList.toggle("swiper-wrapper--polovinka");
+  if (but.textContent == "Показать всё") {
+    but.textContent = "Скрыть";
+    strelochka.style.webkitTransform = "rotate(180deg)";
   } else if (but.textContent == "Скрыть") {
     but.textContent = "Показать всё";
     strelochka.style.webkitTransform = "rotate(0deg)";
-
-    for (let i = 0; i < mass.length; i++) {
-      mobile[mass[i]].style.display = "none";
-      console.log(mass[i]);
-    }
   }
-});
-
-// попытка
+};

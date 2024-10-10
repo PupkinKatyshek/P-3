@@ -77,12 +77,16 @@ li {
   box-sizing: border-box;
   cursor: pointer;
   background-color: #ffffff;
-  /* display: ; */
+  display: flex;
   justify-content: space-between;
 }
 
-.mobile {
-  display: flex;
+.card:hover {
+  opacity: 0.5;
+}
+
+.large {
+  display: none;
 }
 
 .viewmore {
@@ -141,10 +145,6 @@ li {
     position: relative;
   }
 
-  .mobile {
-    display: flex;
-  }
-
   .card {
     height: 72px;
     width: 240px;
@@ -182,17 +182,21 @@ li {
   .card {
     height: 72px;
     width: 224px;
-    margin: 0;
+    border: solid 1px #eaeaea;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #ffffff;
     display: flex;
+    justify-content: space-between;
+    margin: 0;
+    flex-shrink: 0;
+    margin: 0;
     align-items: center;
     flex-wrap: nowrap;
     padding: 16px;
     overflow: hidden;
     justify-content: space-between;
-  }
-
-  .mobile:nth-child(6) ~ .mobile {
-    display: none;
   }
 
   .swiper-pagination {
@@ -202,8 +206,19 @@ li {
     width: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 16px 24px;
     padding: 24px;
+  }
+
+  .swiper-wrapper--polovina {
+    overflow: hidden;
+    height: 150px;
+    transition: 500ms;
+  }
+
+  .swiper-wrapper--vesb-blok {
+    height: 336px;
+    transition: 500ms;
   }
 }
 
@@ -214,22 +229,30 @@ li {
     margin: 0 auto;
   }
 
+  .swiper-wrapper--vesb-blok {
+    height: 248px;
+    transition: 500ms;
+  }
+
   .h1 {
     padding: 16px 750px 16px 32px;
     box-sizing: border-box;
   }
-  .mobile:nth-child(6) ~ .mobile {
-    display: flex;
-  }
 
   .card {
-    width: 240px;
+    border: solid 1px #eaeaea;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #ffffff;
     display: flex;
-
+    justify-content: space-between;
     height: 72px;
     width: 240px;
     margin: 0;
-
+    flex-shrink: 0;
+    margin: 0;
+    display: flex;
     align-items: center;
     flex-wrap: nowrap;
     padding: 16px;
@@ -237,14 +260,14 @@ li {
     justify-content: space-between;
   }
 
-  .card:nth-child(8) ~ .card {
-    display: none;
-  }
-
   .slider-container .swiper-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 16px 32px;
     padding: 24px 32px 24px 32px;
+  }
+
+  .viewmore {
+    left: 32px;
   }
 }
